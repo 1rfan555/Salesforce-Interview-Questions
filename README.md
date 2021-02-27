@@ -1,6 +1,3 @@
-# Salesforce-Interview-Questions
-Salesforce Interview Questions
-
 1.Tell me about What is crm life-cycle?
 ANS : In customer relationship management (CRM), customer lifecycle is a term used to describe the progression of steps 
 	  a customer goes through when considering, purchasing, using and maintaining loyalty to a product or service.
@@ -21,13 +18,13 @@ ANS : A profile controls Object permissions, Field permissions, User permissions
 	  Visualforce page access,Custom Settings,Custom Metadata Types, Page layouts, Record Types, Login hours & Login IP ranges. You can define profiles by user's job function.
 
 
-5. permission sets and explain its uses?
+5. Permission sets and explain its uses?
 ANS : A permission set is a collection of settings and permissions that give users access to various tools and functions. 
 	  The settings and permissions in permission sets are also found in profiles, but permission sets extend users' functional 
 	  access without changing their profiles.
 
 
-6.difference between salesforce profile and permission sets
+6.Difference between salesforce profile and permission sets
 ANS : You can assign permission set as many users you want. The difference between Profile and Permission Sets is Profiles 
 	  are used to restrict from something where Permission Set allows user to get extra permissions.
 
@@ -50,7 +47,7 @@ ANS : Workflows in Salesforce are a fantastic way to automate certain business p
 										or if an existing record is changed from not meeting the criteria to meeting the criteria.
 
 
-8.approval process in salesforce and give me one use case?
+8.Approval process in salesforce and give me one use case?
 ANS : An approval process is an automated process an organization can use to approve records in Salesforce. In an approval process, you specify: The steps necessary for a record to be approved and who approves it at each step.
 	  To submit a record into the approval process, the user has to manually click on the Submit For Approval button.
 	  The disadvantage of this manual process is that a user can forget to click on the Submit For Approval button. It will not auto-send records into the approval process, and therefore, it may cause an issue sometimes.
@@ -61,7 +58,7 @@ ANS : In Salesforce, reports are created by first selecting a report type. A rep
 
 
 10.Which reports support dashboards
-ANS : 1.Tabular(supported in dashboard only if rows are limited (maximum 10)) – This is the simplest of reports and is suited to just showing lines of data and nothing else. If you just want to show data with no preference to seeing totals, calulations or groups of data then this is the report for you just to keep it simple. It is also best to use this report type if you are planning to use it to export data. 
+ANS : 1.Tabular(supported in dashboard only if rows are limited (maximum 10)) – This is the simplest type of reports and is suited to just showing lines of data and nothing else. If you just want to show data with no preference to seeing totals, calulations or groups of data then this is the report for you just to keep it simple. It is also best to use this report type if you are planning to use it to export data. 
 	  2.Summary(supported) – As soon as you click “Group by this field”, you will turn the report into a summary report. Summary reports are probably the most commonly used and are great for showing groups of data e.g. If you want to see your recent accounts opportunities they will be grouped by account and you can see each opportunity under the account. From then you can do calculations, you can see the total amount of sales under an account, you can see the maximum, minimum and also average amount. You can also sub group fields by dragging them under the initial group. 
 	  3.Matrix(supported) – Matrix reports are very similar to Summary but they allow you to group by rows as well as columns to see different totals. Matrix reports aren’t commonly used unless you have to display lots of complex data. 
 	  4.Joined Reports(supported) – Joined reports allow you to create two separate reports so that you can compare data. Again not most commonly used.
@@ -75,8 +72,8 @@ ANS : Salesforce provides organization-level sharing settings to set the baselin
 ANS : In short if you need to do the sum or calculate the average on even one parameter then summary report is the answer. Matrix Reports:- These reports are used when the requirement is to summarize both the Axis i.e. when requirement is to group both Rows as well as Columns.
 
 
-13. process builder& need of process builder?
-ANS : Process Builder Salesforce is basically an automated tool that allows you to control the order of actions or evaluate the criteria for a record. It has eight actions associated with it: Creating records: This will allow you to create a new record and add different field values for it. We can also acheive operations by process builder instead of writing code.
+13. Process builder& need of process builder?
+ANS : Process Builder in Salesforce is basically an automated tool that allows you to control the order of actions or evaluate the criteria for a record. It has number of actions associated with it: Creating records: This will allow you to create a new record and add different field values for it. We can also acheive operations by process builder instead of writing code.
 
 
 14.What are escalation rules and briefly explain
@@ -114,10 +111,22 @@ ANS : Value is always required in master details and there is no such a conditio
 	  You can convert a master-detail relationship to a lookup relationship as long as no roll-up summary fields exist on the master object. You can convert a lookup relationship to a master-detail relationship, but only if the lookup field in all records contains a value.
 
 
-21.what is web to Lead functionality in salesforce?
+21.What is web to Lead functionality in salesforce?
 ANS : The process of using a website form to capture visitor information and store that information as a new lead in Salesforce. Salesforce lets you can easily create web-to-lead forms that capture information about visitors to your website.
 
 
 22.What is email to case & web to case in salesforce?
 ANS : 1.Email-to-Case : Automatically turn emails from your customers into cases in Salesforce to track and resolve customer cases quickly.
       2.Web To Case : Gather customer support requests directly from your company’s website and automatically generate up to 5,000 new cases a day with Web-to-Case. This can help your organization respond to customers faster, improving your support team’s productivity
+	 
+	 
+23. What is custom metadata types in salesforce ?
+ANS : Custom Metadata Type let you use records to configure your app without worrying about migrating those records to other orgs. You can deploy the records of custom metadata types from a sandbox with change sets or packaged in managed packages instead of transferring them manually.
+	  With Custom Metadata Types, you can customize, deploy, package, and upgrade application metadata that you design yourself.
+
+
+24. What is custom setting in salesforce ?
+ANS: Custom settings are similar to custom objects. We have to create our own custom setting similar to creating a custom object.).Custom settings are similar to custom objects and enable application developers to create custom sets of data, as well as create and associate custom data for an organization, profile, or specific user. The custom setting data can then be used by formula fields, validation rules, flows, Apex, and the SOAP API.
+
+25. What do you know about sharing rules in salesforce ?
+ANS : Use sharing rules to extend sharing access to users in public groups, roles, or territories. Sharing rules give particular users greater access by making automatic exceptions to your org-wide sharing settings
