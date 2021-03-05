@@ -130,3 +130,199 @@ ANS: Custom settings are similar to custom objects. We have to create our own cu
 
 25. What do you know about sharing rules in salesforce ?
 ANS : Use sharing rules to extend sharing access to users in public groups, roles, or territories. Sharing rules give particular users greater access by making automatic exceptions to your org-wide sharing settings
+
+26. Trigger to check duplicate Email ids on contact
+ANS : 
+
+trigger AvoidDuplicate on contact (before insert,before update)
+{
+   set<String> setEmail = new set<String>();
+   set<String> setExistingEmail = new set<String>();
+
+   //Add alll email in set to fetch related existing records
+   for(Contact con : Trigger.new)
+   {
+          setEmail.add(con.email);
+
+    }
+
+   // get all records in database.
+    for(Contact con : [select email from contact where email in : setEmail)
+   {
+          setExistingEmail.add(con.email);
+    }
+
+   //compare and add error if already exist
+   if(Trigger.isInsert||Trigger.isUpdate)
+     for(contact a:trigger.new)
+     {
+         if(setExistingEmails.contains(a.email))
+        {
+                 a.Email.adderror('This email already exists');
+        }
+     }
+}
+
+
+27. If OWD is private then who can acccess its records ?
+ANS : Private : Only the record owner, and users above that role in the hierarchy, can view, edit, and report on those records.
+
+
+28. Trigger to restrict insert if city = pune
+ANS : 
+trigger RetrictAccountforPune on Account (before insert) {
+    
+	for(Account acc : Trigger.new)
+   		{
+            if(acc.City__c != Null && acc.City__c == 'Pune'){
+                acc.City__c.adderror('Pune city is not allowed.');
+            }
+
+    	}
+}
+
+29. Custom ListView in LWC
+ANS : We can create/build anything in LWC.
+
+30. Winter'21 release notes
+ANS : 1.Flow Updates : now can handle deletions, debug flows as a specific user, auto flow layouts
+	  2.Dynamic Forms and actions : allow you to create mini-page layouts that can be placed anywhere using the Lightning App Builder.
+									allow you to show/hide actions based on the user viewing the page, for a cleaner user experience.
+	  3.Optimize Lightning Page Performance-click 'Analyze' from the Lightning App Builder toolbar.
+	  4.Auto Add Fields to Custom Report Types-option given in reports and dashboard user interface setting.
+	  5.Community name replaced with Digital Experience Builder in setup
+	  
+	  
+31. Where we can use Lightning Components?
+ANS : We can use Lightning Components in the following places:
+	Drag-and-drop Components in the Lightning App Builder and Community Builder.
+	Add Lightning Components to Lightning Pages.
+	Add Lightning Components to Lightning Experience Record Pages.
+	Launch a Lightning Component as a Quick Action
+	Override Standard Actions with Lightning Components
+	Create Stand-Alone Apps
+	
+	
+32. How do you build Lightning Components?
+ANS : We can build Lightning Components using two programming models: the Lightning Web Components model, and the original Aura Components model.
+
+33. How can you create Lightning Record Pages in Salesforce, and what are the different types
+ANS : We can make use of Lightning App Builder for creating Lightning Record Pages, to create the following three types of pages:
+		App Page
+		Home Page
+		Record Page
+		
+		
+34. What options are there for Lightning Record Page assignment?
+ANS : “Lightning Pages” can be assigned at three different levels:
+		The org default
+		App default – this overrides the assignment done at the org level
+		App, record type, profile – this overrides the assignment done at org level and at the App level.
+
+35. What are attributes? What are their required parameters?
+ANS : Attributes are variables which are used to store values. We specify the Name, Type, Default, Description, Access in the attribute definition. Only Name and Type are required parameters in the attribute definition.
+
+36. What are the types of attributes that we can use to store values?
+ANS : We can use different types of attributes, listed below:
+		String
+		Integer
+		Boolean
+		Date
+		Datetime
+		Double
+		Decimal
+		Long
+		Array
+		List
+		Set
+		Map
+		
+	Standard object attribute – example: <aura:attribute name=”contactObj” type=”Contact”
+	Custom object attribute – example A: aura:attribute name=”customObjectList” type=”customObject__c[]”/>OR example B: <aura:attribute name=”customObject” type=”customObject__c”/>
+	
+37. How can you access a value from an attribute?
+ANS : Use “Value Provide” which is denoted with the symbol “v”.
+
+38. How can you call a javascript controller action from a component markup?
+ANS : We can use action provider to call a javascript controller action from the component markup
+
+39. Which interface should you use if you want to get the id of the record from the record Detail page?
+ANS : You can use the force:hasRecordId interface. Use this as opposed to the {!v.recordId} in controller we can get the id of the current record.
+
+40. Which interface should you use if you want your component to be available for all pages?
+ANS : You can use the flexipage:availableForAllPageTypes interface.
+
+41. Which interface should you use if you want to override a standard action?
+ANS : You will need to use the Lightning:actionOverride interface.
+
+42. Which interface should you use if you want your component to be available only on the record home page?
+ANS : You will need to use the flexipage:availableForRecordHome interface.
+
+43. Which interface should you use if you want your component to be used a tab?
+ANS : You will need to use the force:appHostable interface.
+
+44. Which interface should you use if you want your component to be used a quick action?
+ANS : You will need to use the force:lightningQuickAction interface.
+
+45. How can you define field level security in Lightning Components?
+ANS : You will need to use Lightning:recordForm, Lightning:recordEditForm, Lightning:recordViewForm, force:recordData.
+
+46. What is force:recordData, and what are its advantages?
+ANS : force:recordData is a standard controller of a Lightning Component. We can perform an operation such as creating a record, editing a record,deleting a record using force:recordData. If we are using force:recordData, it identifies and eliminates the duplicate request going to the server if they are requesting for the same record data (which in turn improves performance).
+
+47. What are all component bundles we deal with while working with Lightning Component?
+ANS : Following are the component bundles we deal with while working with Lightning Component.
+	Component: contains markup.
+	Controller: handles the client side events.
+	Helper: write the common logic inside helper which can be used by different controller methods, avoiding repetition.
+	Style: contains the style for the component.
+	Documentation: used to record the component’s use.
+	Renderer: contains the default rendering behaviour of a component.
+	SVG: the icon which gets displayed before the component name in the Lightning App Builder.
+	Design: control which attribute we can expose to tools like the Lightning App Builder. It helps with component re-usability.
+	
+48. What is Lightning:isUrlAddressable interface?
+ANS : If we are navigating to a component, then the component where we are navigating to must implement lightning:isUrlAddressable interface to navigate there successfully.
+
+
+49 : Is Lightning Web Components and Aura Components Work Together ?
+ANS : Yes, Lightning web components and aura components work together without any issues. Aura components can contain Lightning web components, but Lightning web components can't contain aura components.
+
+
+50. What is a @track decorator in js file?
+ANS : It will keep track of the property’s value changes. This decorator is used to make a property private and which helps to re-render the component when the property value is changed.
+
+
+51. What is a @api decorator in js file?
+ANS : It is used to expose the public property of a web component. this property can use in it's parent component. 
+
+
+52. What is a @wire decorator in js file?
+ANS : To access Salesforce data (calling an apex method), Lightning web components use a reactive wire service.
+
+53. Does Profile permissions override OWD ?
+ANS : Profile gives you the permission too Create/Read/Edit/Delete the OBJECT as a whole. (Account, Contact, Opportunity etc). Then further the OWD restrict the access for Records belonging to that object (records not owned by you).
+
+54. Difference Between Trigger.New and Trigger.old
+ANS : 	Trigger.New: Trigger.new returns List of new records which are trying to insert/update into Database. This is available in Before Insert, Before Update, After Insert,  After Update Triggers and undelete Triggers. This list of records can only modified in Before triggers.
+
+		Trigger.Old: Trigger.old returns List of old records which are updated with new values. These List of records already there in Database. Trigger.old available in Before update, after update, Before Delete and After Delete triggers.
+		
+55. How do you call apex method in lwc component?
+ANS : explain the syntax : import VARIABLENAME from '@salesforce/apex/CLASSNAME.METHODNAME';
+
+56. Have you worked on Integration in your current project? if yes then explain it.
+ANS : SFDC(REST)>Mule(SOAP)>CBS
+
+57. Which deployment tools you have worked on so far ?
+ANS : ANT, Changeset, Jenkins.
+
+58. In how many ways you can display SF records in AURA/LWC?
+ANS : Datatable using custom metadata type.
+
+59. What was the most challenging task you faced in your current project?
+ANS : Explain according to your experience.
+
+60. Batch Apex methods ?
+ANS : start(), Execute(), finish().
+		ref : http://salesforcevenkat81215.blogspot.com/2017/06/interview-questions-on-batch-apex-in.html
