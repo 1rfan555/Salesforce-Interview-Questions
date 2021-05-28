@@ -321,8 +321,17 @@ ANS : ANT, Changeset, Jenkins.
 ANS : Datatable using custom metadata type.
 
 59. What was the most challenging task you faced in your current project?
-ANS : Explain according to your experience.
+ANS : Explain according to your experience. In my case it was related to deployment.
 
 60. Batch Apex methods ?
 ANS : start(), Execute(), finish().
 		ref : http://salesforcevenkat81215.blogspot.com/2017/06/interview-questions-on-batch-apex-in.html
+	
+61. What are different authentications available in Salesforce ?
+62. Can we delete the SF record using Flow ? Yes
+63. Trigger to calculate detail records on master object.
+64. How authentication takes place while integrating with external systems?
+65. Asynchronous Apex-Batch/Future
+66. Custom settings and it types ?List and Heirarchy
+67. Financial Cloud - Need to explain basic flow if you are/have working/worked in finacial domain project(bank)
+68. 
