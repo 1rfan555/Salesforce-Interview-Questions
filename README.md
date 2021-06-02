@@ -334,4 +334,37 @@ ANS : start(), Execute(), finish().
 65. Asynchronous Apex-Batch/Future
 66. Custom settings and it types ?List and Heirarchy
 67. Financial Cloud - Need to explain basic flow if you are/have working/worked in finacial domain project(bank)
-68. 
+
+	
+	
+	
+	
+	
+	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Interview Questions from Goldman Sachs
+1. Walk me through basic flow of Financial Cloud > https://www.salesforce.com/products/financial-services-cloud/faq/
+2. Difference between Business and Person Accounts > http://sfdcsrini.blogspot.com/2014/12/person-account-and-business-account-in.html#:~:text=The%20basic%20difference%20between%20these,on%20which%20they%20are%20based.&text=In%20Person%20account%20record%20type,related%20list%20will%20be%20present.
+3. Aura Component Bundle(Events, Attributes, CSS, Aura Method)
+4. How you will use workflow rule is some cases like some field is getting updated by trigger and
+	then only your workflow should run. > Use Created, Every time its Edited to subsequently meet the criteria
+5. What will you do if you dont want to run your workflow rule > Deactivate It
+6. What is the difference between Workflow and Trigger
+7. Tell me about Asynchronous Apex(Batch, Queuable)
+8. I have two batch classes, say A and B and I have added B in finish() method of A. But A batch gets failed,
+	Will the Batch B will run ? 
+9. Security Model(OWD,Profile,Role,Sharing Rule)
+10. How you will create Sharing Rule ? How I will know that my sharing rule is created. > Under OWD in Setup>Sharing Setting. You will get notification saying your sharing rule     is active.
+11. What is Difference between Custom Object and Custom Settings ?
+12. What will happen after you disburs the loan to a customer and he didn't show up for dues > Explain Vijay Mallya case(you have to pay
+	them back else there will be cort matters or you can run away to different country) > p.s.explain this in professional way
+13. Deployments > How you will resolve if you get error in deployment saying apex jobs are running? Go to deployment setting and check "Allow deployments of components when corresponding Apex jobs are pending or in progress.Caution: Enabling this option may cause Apex jobs to fail." checkbox from deployment options section
+14. What is the minimum Code Coverage required for Apex Class and Apex Trigger in production deployment ? 75% for Apex and 1% for Trigger
+15. Will the production and sandbox orgs configurations are different after taking refresh from production ? No, only some data will differ
+16. Which Components you can edit directly in production ? VisualforcePage, Aura Component
+17. How will you resolve the deployment issue of code coverage, say you have 90% coverage for a class,
+	and at the time of production validation it is showing 35% ? Have one sandbox instance from production and try to run the apex test class and resolve the issue.
+18. What is Package.xml in package ? Its the Markup of your components from Org.
+19. Approval Process > Explain in detail> Entry Criteria, Actions
+20. Do you feel okay to work in any other technology than Salesforce if you get a chance ? Yes/No
+	
